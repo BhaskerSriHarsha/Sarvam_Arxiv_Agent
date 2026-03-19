@@ -6,6 +6,7 @@ from langchain_openai import ChatOpenAI
 from langchain_core.tools import StructuredTool
 from support_functions import server_config, make_string_tool
 from dotenv import load_dotenv
+from system_prompt import SYSTEM_PROMT
 
 load_dotenv()
 
@@ -52,7 +53,8 @@ async def main():
         
         # --- New Streaming Execution ---
         final_output = ""
-        chat_history = [{"role": "user", "content": query}]
+        chat_history = [{'role':'system', "content": SYSTEM_PROMT},
+                        {"role": "user", "content": query}]
         
         # stream_mode="updates" yields data every time a node finishes
         async for step in agent.astream({"messages": chat_history}, stream_mode="updates"):
