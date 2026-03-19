@@ -1,4 +1,5 @@
 # Sarvam_Arxiv_Agent
+<img src="banner.png"></img>
 A ReAct agent powered by Sarvam models to perform agentic survey of Arxiv papers
 
 # To Do
