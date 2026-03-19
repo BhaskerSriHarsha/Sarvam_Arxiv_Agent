@@ -2,6 +2,8 @@
 <img src="banner.png"></img>
 A ReAct agent powered by Sarvam models to perform agentic survey of Arxiv papers
 
+---
+
 ### Prerequisites
 Before you begin, ensure you have the following installed:
 * **Python 3.11** or higher
