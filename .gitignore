@@ -79,3 +79,6 @@ venv.bak/
 
 # Cython debug symbols
 cython_debug/
+
+# Custom additions
+report.md
