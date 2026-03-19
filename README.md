@@ -11,7 +11,7 @@ Before you begin, ensure you have the following installed:
 ### 1. Clone the Repository
 Open your terminal and clone this repository to your local machine:
 ```bash
-git clone [https://github.com/BhaskerSriHarsha/Sarvam_Arxiv_Agent.git](https://github.com/BhaskerSriHarsha/Sarvam_Arxiv_Agent.git)
+git clone https://github.com/BhaskerSriHarsha/Sarvam_Arxiv_Agent.git
 cd Sarvam_Arxiv_Agent
 ```
 
@@ -21,7 +21,7 @@ This agent relies on the arXiv Model Context Protocol (MCP) server. It must be i
 Using `uv` (Recommended):
 ```bash
 pip install uv
-uv tool install git+[https://github.com/blazickjp/arxiv-mcp-server](https://github.com/blazickjp/arxiv-mcp-server)
+uv tool install git+https://github.com/blazickjp/arxiv-mcp-server
 uv tool update-shell
 ```
 *(Note: If you use `uv tool update-shell` on Windows, you will need to close and reopen your terminal for the changes to take effect).*
