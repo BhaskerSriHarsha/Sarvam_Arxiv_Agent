@@ -7,6 +7,7 @@ from langchain_core.tools import StructuredTool
 from support_functions import server_config, make_string_tool
 from dotenv import load_dotenv
 from system_prompt import SYSTEM_PROMT
+# from more_tools import write_report
 
 load_dotenv()
 
@@ -19,6 +20,7 @@ async def main():
 
     # 2. Fetch the tools from the arXiv server asynchronously
     mcp_tools = await client.get_tools()
+    # more_tools = [write_report]
 
     stringified_tools = []
     for t in mcp_tools:
@@ -30,6 +32,8 @@ async def main():
                 args_schema=t.args_schema
             )
         )
+
+    # stringified_tools.extend(more_tools)
 
     # 3. Initialize your model
     my_api_key = os.getenv("SARVAM_API_KEY")
@@ -79,6 +83,15 @@ async def main():
         print("=" * 50)
         print("FINAL OUTPUT:\n")
         print(final_output)
+
+        # --- ADD THIS: Write to disk securely via Python ---
+        if final_output:
+            try:
+                with open("report.md", "w", encoding="utf-8") as f:
+                    f.write(final_output)
+                print(f"\n\n\n\n-----------------------------------\n✅ Success: Report safely written to report.md")
+            except Exception as e:
+                print(f"❌ Error writing to disk: {e}")
 
 if __name__ == "__main__":
     asyncio.run(main())
