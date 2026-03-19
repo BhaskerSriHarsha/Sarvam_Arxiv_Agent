@@ -70,5 +70,5 @@ You will see the agent's thought process stream in the terminal. Once the execut
 2. Add web_search tool
 3. <s> Create requirements.txt </s>
 4. <s> Add a report_writing tool </s>
-5. Add instructions to run the script in README file
+5. <s> Add instructions to run the script in README file </s>
 6. Add conversational memory to the agent
